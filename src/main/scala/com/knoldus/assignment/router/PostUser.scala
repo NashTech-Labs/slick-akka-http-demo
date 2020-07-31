@@ -8,7 +8,7 @@ import com.knoldus.assignment.{DbConfig, JsonSupport}
 import scala.util.{Failure, Success}
 import scala.concurrent.ExecutionContext.Implicits.global
 
-object PostUserRoute extends JsonSupport {
+object PostUser extends JsonSupport {
   val route: Route = {
     post {
       path("user") {
@@ -27,8 +27,8 @@ object PostUserRoute extends JsonSupport {
   private def insert(user: User , complete : User => Unit) = {
     val result = DbConfig.table.insert(user)
     result onComplete {
-      case Success(value) => complete(user)
-      case Failure(exception) => complete(User(-1 , ""))
+      case Success(_) => complete(user)
+      case Failure(_) => complete(User(-1 , ""))
     }
   }
 }

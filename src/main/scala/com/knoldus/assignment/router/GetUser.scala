@@ -7,7 +7,7 @@ import com.knoldus.assignment.model.GetResponse
 
 import scala.concurrent.ExecutionContext.Implicits.global
 
-object GetUserRoute extends JsonSupport {
+object GetUser extends JsonSupport {
   val route: Route = {
     path("user") {
       get {

@@ -1,6 +1,8 @@
 # slick-akka-http-demo
 In this project, I have used MySQL RDBMS.
 
+In DbConfig.scala file, add your username and password for the database connection.
+
 This demo serves two types of http requests:
     
     1 Get
